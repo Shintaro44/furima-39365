@@ -4,9 +4,9 @@
 
 | Column             | Type                | Options                   |
 |--------------------|---------------------|---------------------------|
-| nickname           | string              | null: false, unique: true |
+| nickname           | string              | null: false               |
 | email              | string              | null: false, unique: true |
-| encrypted_password | string              | null: false, unique: true |
+| encrypted_password | string              | null: false               |
 | last_name          | string              | null: false               |
 | first_name         | string              | null: false               |
 | last_name_kana     | string              | null: false               |
@@ -44,7 +44,7 @@
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
-| user        | text       | null: false                    |
+| user        | text       | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
 
 ### Association
@@ -58,12 +58,12 @@
 | Column        | Type       | Options                        |
 |---------------|------------|--------------------------------|
 | orders        | text       | null: false                    |
-| postcode      | references | null: false, foreign_key: true |
-| prefecture_id | references | null: false, foreign_key: true |
-| city          | text       | null: false                    |
-| block         | text       | null: false                    |
-| building      | text       | null: false                    |
-| phone_number  | text       | null: false                    |
+| postcode      | string     | null: false                    |
+| prefecture_id | integer    | null: false, foreign_key: true |
+| city          | string     | null: false                    |
+| block         | string     | null: false                    |
+| building      | string     |                                |
+| phone_number  | string     | null: false                    |
 
 ### Association
 
