@@ -44,7 +44,7 @@
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
-| user        | text       | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
 
 ### Association
@@ -57,7 +57,7 @@
 
 | Column        | Type       | Options                        |
 |---------------|------------|--------------------------------|
-| orders        | text       | null: false                    |
+| orders        | text       | null: false, foreign_key: true |
 | postcode      | string     | null: false                    |
 | prefecture_id | integer    | null: false, foreign_key: true |
 | city          | string     | null: false                    |
