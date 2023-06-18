@@ -33,7 +33,7 @@ class Item < ApplicationRecord
 
   
   # ジャンルの選択が「---」の時は保存不可
-  with_options numericality: { other_than: 0 } do
+  with_options numericality: { other_than: 0, message: "を「---」以外で選択してください" } do
     validates :category_id
     validates :prefecture_id
     validates :item_status_id
